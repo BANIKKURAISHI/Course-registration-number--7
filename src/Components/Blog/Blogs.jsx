@@ -10,32 +10,33 @@ const Blogs = () => {
     const [values,setValues]=useState([])
     const [times,setTimes]=useState(0)
     const [remaining,setRemaining]=useState(20)
+    const [price,setPrice]=useState(0)
     useEffect(()=>{
         fetch("blogData.json")
         .then(res=>res.json())
         .then(data=>setBlogs(data))
     },[])
 
-const newButton=(power,read)=>{
+const newButton=(power,read,taka)=>{
   const newValue=[...values,power]
-  setValues(newValue)
+  
+  const totalPrice=price+taka
+  
  // console.log(power)
  const newTime=times+read
-  if(newTime<=20){
+ const remainingTime=remaining-read
+  if(newTime<=20&&remainingTime>=0){
     
     setTimes(newTime)
+    setRemaining(remainingTime)
+    setValues(newValue)
+    setPrice(totalPrice)
     // console.log(newTime)
   }
   else{
-    alert('Your reding time is finished')
+    alert('Your reding time is finished and Remaining Time is 0')
   }
-  const remainingTime=remaining-read
-  if(remainingTime>=0){
-    setRemaining(remainingTime)
-  }
-  else{
-    alert('Your time is finished')
-  }
+  
 
   
   
@@ -45,16 +46,17 @@ const newButton=(power,read)=>{
 
 
 
+
     return (
-        <div>
-            <div className="flex flex-col mx-auto md:flex-col max-w-7xl justify-between lg:flex-row ">
-                <div className="grid mx-auto md:grid-cols-2  my-10 lg:grid-cols-3 gap-20 w-3/4">
+        <div >
+            <div className="flex my-16 flex-col mx-auto md:flex-col max-w-7xl justify-between lg:flex-row ">
+                <div className="grid mb-32 md:grid-cols-2 gap-x-52  lg:grid-cols-3 gap-auto w-3/4">
                     {
                         blogs.map(blog=><Blog key={blog.id} newButton={newButton}  product={blog}></Blog>)
                     }
                 </div>
-                <div className="mx-auto  lg:w-1/5">
-                 <Card values={values} times={times} remaining={remaining}></Card>
+                <div className="mx-auto md:-mx-16  lg:w-1/5">
+                 <Card values={values} times={times} remaining={remaining} price={price}></Card>
                 
                 </div>
             </div>
