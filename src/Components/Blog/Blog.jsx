@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+
 import {FaBookmark ,FaDollarSign} from 'react-icons/fa';
 
 const Blog= ({product,newButton}) => {
@@ -17,8 +18,9 @@ const Blog= ({product,newButton}) => {
                  <p>{details}</p>
                  
                  <div className='flex justify-between my-4'>
-                 <div className='flex font-semibold'>
-                    <span><FaDollarSign></FaDollarSign>Price:{price}</span>
+                 <div >
+                    <FaDollarSign></FaDollarSign>
+                    <span className='inline'>Price:{price}</span>
                 </div>
                 <div className='font-semibold'>
                     <h3><FaBookmark></FaBookmark>Credit:<span>{credit}</span>hr</h3>
@@ -37,8 +39,9 @@ const Blog= ({product,newButton}) => {
 };
 
 
-Blog.propType ={
-    product:PropTypes.object.isRequired
+Blog.propTypes ={
+    product:PropTypes.object.isRequired,
+    newButton:PropTypes.func
     }
 
 export default Blog;
