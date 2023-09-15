@@ -1,28 +1,33 @@
 import PropTypes from 'prop-types'
-
+import {FaBookmark ,FaDollarSign} from 'react-icons/fa';
 
 const Blog= ({product,newButton}) => {
-  const {img,title,price,credit,details}=product;
+  const  {img,title,price,credit,details}=product;
+
   const a =()=> newButton(product)
+
     return (
-        <div>
-           <div className="card w-96 bg-base-100 shadow-2xl rounded-3xl ">
+        <div >
+           <div className="card w-80 bg-base-100 shadow-2xl rounded-3xl">
                  <figure className="px-4 pt-4">
-                 <img src={img} alt="" className='w-96'/>
+                 <img src={img} alt="Cover Picture" className='w-full'/>
                  </figure>
-                 <div  className="card-body text-justify p-5 ">
-                 <h2 className="card-title text-xl my-4 font-medium">{title}</h2>
+                 <div  className="card-body text-justify p-4 my-4">
+                 <h2 className="card-title text-xl font-medium ">{title}</h2>
                  <p>{details}</p>
+                 
                  <div className='flex justify-between my-4'>
-                 <div className='font-semibold'>
-                    <h3>Price:{price}</h3>
+                 <div className='flex font-semibold'>
+                    <span><FaDollarSign></FaDollarSign>Price:{price}</span>
                 </div>
                 <div className='font-semibold'>
-                    <h3>Credit: <span>{credit}</span> hr</h3>
+                    <h3><FaBookmark></FaBookmark>Credit:<span>{credit}</span>hr</h3>
                 </div>
-               </div>
                 </div>
-           <button onClick={a} className="btn bg-blue-500 text-3xl rounded-lg p-2 w-3/4 className='font-semibold'">Select</button>
+            
+                </div>
+                <button onClick={a} className="btn bg-blue-500 text-3xl rounded-lg w-2/3 className='font-semibold' mb-2">Select</button>
+          
     
             </div>
 
@@ -33,10 +38,7 @@ const Blog= ({product,newButton}) => {
 
 
 Blog.propType ={
-    product:PropTypes.array.isRequired
-  
-        
-    
-}
+    product:PropTypes.object.isRequired
+    }
 
 export default Blog;

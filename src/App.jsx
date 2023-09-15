@@ -8,7 +8,7 @@ function App() {
     
       <div>
          <Header></Header>
-        <Blogs></Blogs>
+         <Blogs></Blogs>
       </div>
       
   )

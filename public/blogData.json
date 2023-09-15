@@ -1,17 +1,17 @@
 [
     {
-      "img": "https://i.ibb.co/pXKy72L/Rectangle-2-2.png",
-      "title": "Introduction to C Programming",
-      "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "img":"https://i.ibb.co/pXKy72L/Rectangle-2-2.png",
+      "title":"Introduction to c programming",
+      "details":"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
       "price": 15000,
       "credit": 1
     },
     {
-      "img": "https://i.ibb.co/xgGx61j/Rectangle-2-3.png",
-      "title": "Introduction to Algorithms",
-      "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-      "price": 25000,
-      "credit": 2
+      "img":"https://i.ibb.co/xgGx61j/Rectangle-2-3.png",
+      "title":"Introduction to Algorithms",
+      "details":"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "price":25000,
+      "credit":2
     },
     {
       "img": "https://i.ibb.co/q0nqX40/Rectangle-2-4.png",
