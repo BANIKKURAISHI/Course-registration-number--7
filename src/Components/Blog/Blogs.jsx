@@ -8,17 +8,26 @@ import Card from "./Card";
 const Blogs = () => {
     const [blogs,setBlogs]=useState([])
     const [values,setValues]=useState([])
+    const [times,setTimes]=useState(0)
+    
     useEffect(()=>{
         fetch("blogData.json")
         .then(res=>res.json())
         .then(data=>setBlogs(data))
     },[])
 
-const newButton=(power)=>{
+const newButton=(power,read)=>{
   const newValue=[...values,power]
   setValues(newValue)
-  console.log(power)
+ // console.log(power)
+
+  const newTime=times+read
+  setTimes(newTime)
+  console.log(newTime)
+
+  
 }
+
 
 
 
@@ -31,7 +40,7 @@ const newButton=(power)=>{
                     }
                 </div>
                 <div className="mx-auto  lg:w-1/5">
-                 <Card values={values}></Card>
+                 <Card values={values} times={times}></Card>
                 
                 </div>
             </div>

@@ -5,7 +5,8 @@ import {FaBookmark ,FaDollarSign} from 'react-icons/fa';
 const Blog= ({product,newButton}) => {
   const  {img,title,price,credit,details}=product;
 
-  const a =()=> newButton(product)
+  const a =()=> newButton(product,credit)
+  
 
     return (
         <div >
@@ -23,7 +24,7 @@ const Blog= ({product,newButton}) => {
                     <span className='inline'>Price:{price}</span>
                 </div>
                 <div className='font-semibold'>
-                    <h3><FaBookmark></FaBookmark>Credit:<span>{credit}</span>hr</h3>
+                    <h3><FaBookmark></FaBookmark>Credit:{credit}hr</h3>
                 </div>
                 </div>
             
