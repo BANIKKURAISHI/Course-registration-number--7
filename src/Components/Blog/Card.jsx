@@ -2,16 +2,16 @@ import PropTypes from 'prop-types'
 import Title from './../Title/Title';
 
 
-const Card = ({values,times}) => {
+const Card = ({values,times,remaining}) => {
  
     return (
-        <div>
+        
             <div className="card w:80 md:96 lg:w-96 bg-base-100 shadow-2xl rounded-2xl mx-16 my-12  p-10 text-justify">
-                  <h2 className="text-xl">Credit Hour Remaining<span>:</span> hr</h2>
+            <div><h2 className="text-xl">Credit Hour Remaining{remaining}hr</h2>
                   <hr/>
                   
                    {
-                   values.map(value=><Title key={value.id} value={value}></Title>)  
+                   values.map(value=><Title key={value.id} value={value} remaining={remaining}></Title>)  
                      
                     }
                   <hr />
@@ -26,7 +26,8 @@ const Card = ({values,times}) => {
 };
 Card.propTypes={
      values:PropTypes.array.isRequired,
-     times:PropTypes.number
+     times:PropTypes.number,
+     remaining:PropTypes.number
 }
 
 

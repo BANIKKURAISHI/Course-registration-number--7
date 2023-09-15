@@ -7,7 +7,7 @@ const Title =({value}) =>{
 
     return (
         <div>
-         
+              
                 <li>{title}</li>
                 
                 
@@ -17,7 +17,8 @@ const Title =({value}) =>{
 
 
 Title.propTypes={
-  value:PropTypes.object.isRequired
+  value:PropTypes.object.isRequired,
+  
 }
 
 export default Title;
