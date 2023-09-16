@@ -21,6 +21,6 @@ you can load max 20 credit time .When credit fill up you cant add more course an
 If you select multiple course  it show your total price.
 
 When remaining time is null and credit time fill up it gives a  alert.
-Besides When you   selcet One course name  more then one times it give you a alert.
+Besides When you   select One course name  more then one times it give you a alert.
 
-Discuss how you managed the state in your assignment project.
+<li>Discuss how you managed the state in your assignment project.</li>
