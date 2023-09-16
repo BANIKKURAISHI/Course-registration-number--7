@@ -3,7 +3,7 @@ import Title from './../Title/Title';
 
 
 const Card = ({values,times,remaining,price}) => {
- 
+    
     return (
         
             <div className="card w:80 md:96 lg:w-96 bg-base-100 shadow-2xl rounded-2xl mx-16 my-12  p-10 text-justify">
@@ -13,7 +13,8 @@ const Card = ({values,times,remaining,price}) => {
                   <div className="text-xl p-2">
                    
                    {
-                   values.map(value=><Title key={value.id} value={value} remaining={remaining}></Title>)  
+                   values.map((value,idx)=><Title key={idx} value={value} idx={idx+1}  remaining={remaining}></Title>)  
+                  
                      
                     }
                     </div>

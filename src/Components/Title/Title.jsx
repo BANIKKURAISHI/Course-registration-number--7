@@ -1,14 +1,17 @@
 
 import PropTypes from 'prop-types';
 
-const Title =({value}) =>{
+const Title =({value,idx}) =>{
     const {title}=value
    
 
     return (
         <div>
-              
-                <li>{title}</li>
+          
+          <li className='list-none' > {idx}.{title}</li>
+          
+               
+               
                 
                 
         </div>
@@ -18,6 +21,7 @@ const Title =({value}) =>{
 
 Title.propTypes={
   value:PropTypes.object.isRequired,
+  idx:PropTypes.number,
   
 }
 
