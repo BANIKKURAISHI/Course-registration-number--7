@@ -25,11 +25,11 @@ const newButton=(power,read,taka)=>{
     const totalPrice=price+taka
     const newTime=times+read
     const remainingTime=remaining-read
-
+    const newRemainingTime=parseFloat(20)-times
     if(values.includes(power)) {
-        toast.error('Item is already selected!', {
+        toast.error('Item is already selected!!', {
             position: 'top-right',
-            autoClose: 3000,
+            autoClose: 4000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -45,7 +45,15 @@ const newButton=(power,read,taka)=>{
         setValues(newValue)
       }
       else{
-        toast("Your reding time is finished and you don't add more time")
+
+        if(newRemainingTime===0){
+            toast(` OPS!!!Your Total Credit Hour is full
+                    Your remaining Credit Hour Finished
+                    You do not add more Hour`) 
+        }
+          else{toast(` OPS!!!
+            Your remaining time is  insufficient(${remainingTime}).You do not add more than 20.
+           Now You can add only ${newRemainingTime}`)}
         
       }
    }
