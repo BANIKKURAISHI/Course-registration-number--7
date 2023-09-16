@@ -8,7 +8,7 @@ const Title =({value,idx}) =>{
     return (
         <div>
           
-          <li className='list-none' > {idx}.{title}</li>
+          <li className='list-none ' > {idx}.{title}</li>
           
                
                

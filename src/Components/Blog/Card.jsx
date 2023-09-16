@@ -20,10 +20,10 @@ const Card = ({values,times,remaining,price}) => {
                     </div>
                   <hr />
                  <div>
-                    <h2 className="text-xl p-6">Total Credit Hour:{times}</h2>
+                    <h2 className="text-xl p-6">Total Credit Hour: {times}</h2>
                  </div>
                   <hr />
-                  <h3 className="my-4 p-6">Total Price:{price}</h3>
+                  <h3 className="text-xl my-4 p-6">Total Price: {price} USD</h3>
             </div>
         </div>
     );

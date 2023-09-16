@@ -1,14 +1,10 @@
 import PropTypes from 'prop-types'
-
 import {FaBookmark ,FaDollarSign} from 'react-icons/fa';
 
 const Blog= ({product,newButton}) => {
   const  {img,title,price,credit,details}=product;
-
-  const a =()=> newButton(product,credit,price)
-  
-
-    return (
+  const a =()=>newButton(product,credit,price)
+   return (
         <div >
            <div className="card w-80 bg-base-100 shadow-2xl rounded-3xl my-8">
                  <figure className="px-4 pt-4">
@@ -34,7 +30,7 @@ const Blog= ({product,newButton}) => {
             
                 </div>
                 <button onClick={a} className="btn bg-blue-500 text-3xl rounded-lg w-2/3 className='font-semibold' mb-8 p-2">Select</button>
-          
+                
     
             </div>
 

@@ -12,6 +12,8 @@ const Blogs = () => {
     const [times,setTimes]=useState(0)
     const [remaining,setRemaining]=useState(20)
     const [price,setPrice]=useState(0)
+  
+
     useEffect(()=>{
         fetch("blogData.json")
         .then(res=>res.json())
@@ -20,21 +22,36 @@ const Blogs = () => {
 
 const newButton=(power,read,taka)=>{
     const newValue=[...values,power]
+    
     const totalPrice=price+taka
     const newTime=times+read
     const remainingTime=remaining-read
 
-  if(newTime<=20&&remainingTime>=0){
-    setTimes(newTime)
-    setRemaining(remainingTime)
-    setValues(newValue)
-    setPrice(totalPrice)
-  
-  }
-  else{
-    toast('Your reding time is finished and Remaining Time is 0')
-    toast.error('Already selected')
-  }
+    if(values.includes(power)) {
+        toast.error('Item is already selected!', {
+            position: 'top-right',
+            autoClose: 3000, // 3 seconds
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          })
+       }
+   else{
+    
+    if(newTime<=20&&remainingTime>=0){
+        setTimes(newTime)
+        setRemaining(remainingTime)
+        setPrice(totalPrice)
+        setValues(newValue)
+      }
+      else{
+        toast("Your reding time is finished and you don't add more time")
+        
+      }
+   }
+
+
   }
   
  return (
