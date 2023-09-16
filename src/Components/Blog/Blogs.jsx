@@ -22,7 +22,6 @@ const Blogs = () => {
 
 const newButton=(power,read,taka)=>{
     const newValue=[...values,power]
-    
     const totalPrice=price+taka
     const newTime=times+read
     const remainingTime=remaining-read
@@ -30,7 +29,7 @@ const newButton=(power,read,taka)=>{
     if(values.includes(power)) {
         toast.error('Item is already selected!', {
             position: 'top-right',
-            autoClose: 3000, // 3 seconds
+            autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
